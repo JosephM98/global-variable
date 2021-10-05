@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Oct  1 11:36:38 2021
+
+@author: josephmontenegro
+"""
+
+#A Global Variable
+
+var1 = "A Global Variable"
+
+def myFunction():
+  print("Var 1 inside the function is: ", var1)
+  
+print("var-1 - outside the function is: ", var1)
+myFunction()
+
+#Global Variables sometimes will cause error
+
+var2 = "Another global variable"
+
+def f2():
+  global var2 #without this, we get an error
+  var2 = var2 + " - Need to know"
+  print(var2)
+
+f2()
+
+#Local Variable
+
+def f3():
+  var3 = "A local variable"
+  print(var3)
+
+f3()
+
+#A mix of global and local
+
+var4 = "Another global"
+def f4():
+  var4 = "Another local"
+  print("Inside the function: ", var4)
+  
+print("Outside the fucntion: ", var4)
+f4()
